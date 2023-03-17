@@ -19,10 +19,7 @@ int main(void)
 		{
 			putchar(48 + number);
 			if (number != 99)
-			{
 				putchar(',');
-				putchar(' ');
-			}
 		}
 	}
 	putchar('\n');
