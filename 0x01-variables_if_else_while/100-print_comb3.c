@@ -14,7 +14,7 @@ int main(void)
 			putchar('0' + number);
 		if (number >= 10 && number % 10 != 0 && number % 100 < number % 10)
 			putchar(48 + number);
-		if (number != 99)
+		if (number != 99 && number % 10 != 0 && number % 100 < number % 10)
 		{
 			putchar(',');
 			putchar(' ');
