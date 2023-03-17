@@ -19,7 +19,7 @@ int main(void)
 			{
 				for (digit4 = 0; digit4 < 10; digit4++)
 				{
-					if (digit4 != 0)
+					if (digit1 * 10 + digit2 < digit3 * 10 + digit4)
 					{
 						putchar(48 + digit1);
 						putchar(48 + digit2);
