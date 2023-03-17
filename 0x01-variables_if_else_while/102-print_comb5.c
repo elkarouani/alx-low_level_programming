@@ -19,13 +19,16 @@ int main(void)
 			{
 				for (digit4 = 0; digit4 < 10; digit4++)
 				{
-					putchar(48 + digit1);
-					putchar(48 + digit2);
-					putchar(' ');
-					putchar(48 + digit3);
-					putchar(48 + digit4);
-					putchar(',');
-					putchar(' ');
+					if (digit1 != digit3 || digit2 != digit4)
+					{
+						putchar(48 + digit1);
+						putchar(48 + digit2);
+						putchar(' ');
+						putchar(48 + digit3);
+						putchar(48 + digit4);
+						putchar(',');
+						putchar(' ');
+					}
 				}
 			}
 		}
