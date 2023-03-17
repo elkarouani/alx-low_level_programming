@@ -13,7 +13,7 @@ int main(void)
 		if (number < 10)
 		{
 			putchar('0');
-			putchar(number);
+			putchar(48 + number);
 		}
 		if (number >= 10 && number % 10 != 0 && (number / 10) % 10 < number % 10)
 		{
