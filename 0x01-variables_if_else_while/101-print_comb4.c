@@ -20,6 +20,7 @@ int main(void)
 				{
 					putchar(48 + digit1);
 					putchar(48 + digit2);
+					putchar(48 + digit3);
 					if (digit1 != 7 || digit2 != 8 || digit3 != 9)
 					{
 						putchar(',');
