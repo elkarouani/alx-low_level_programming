@@ -16,11 +16,7 @@ int main(void)
 			putchar(48 + number);
 		}
 		if (number >= 10 && number % 10 != 0 && (number / 10) % 10 < number % 10)
-		{
 			putchar(48 + number);
-			if (number != 99)
-				putchar(',');
-		}
 	}
 	putchar('\n');
 	return (0);
