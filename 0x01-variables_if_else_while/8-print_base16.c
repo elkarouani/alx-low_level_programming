@@ -12,7 +12,7 @@ int main(void)
 	for (number = 0; number < 10; number++)
 		putchar(48 + number);
 	for (character = 'a'; character <= 'f'; character++)
-		putchar(charachter);
+		putchar(character);
 	putchar('\n');
 	return (0);
 }
