@@ -26,7 +26,6 @@ int main(void)
 						putchar(' ');
 						putchar(48 + digit3);
 						putchar(48 + digit4);
-
 						if (digit1 != 9 || digit2 != 8 || digit3 != 9 || digit4 != 9)
 						{
 							putchar(',');
