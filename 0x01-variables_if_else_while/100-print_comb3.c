@@ -6,17 +6,24 @@
  */
 int main(void)
 {
-	int number;
+	int digit1;
+	int digit2;
 
-	for (number = 1; number < 100; number++)
+	for (digit1 = 0; digit1 < 10; digit1++)
 	{
-		if (number < 10)
+		for (digit2 = 0; digit2 < 10; digit2++)
 		{
-			putchar('0');
-			putchar(48 + number);
+			if (digit1 < digit2)
+			{
+				putChar(48 + digit1);
+				putChar(48 + digit2);
+				if (digit1 != 8 && digit2 != 9)
+				{
+					putChar(',');
+					putChar(' ');
+				}
+			}
 		}
-		if (number >= 10 && number % 10 != 0 && (number / 10) % 10 < number % 10)
-			putchar(48 + number);
 	}
 	putchar('\n');
 	return (0);
