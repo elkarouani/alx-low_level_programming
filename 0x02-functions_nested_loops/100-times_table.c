@@ -35,7 +35,7 @@ void print_times_table(int n)
 			}
 			if (multiplicand != 0 && product >= 100)
 			{
-				_putchar(product / 10 + 48);
+				_putchar((product / 100) % 10 + 48);
 				_putchar((product / 10) % 10 + 48);
 				_putchar(product % 10 + 48);
 			}
