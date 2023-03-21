@@ -16,7 +16,7 @@ int main(void)
 	while (counter < 50)
 	{
 		n = n1 + n2;
-		printf(counter < 49 ? "%ld\n" : "%ld, ", n);
+		printf(counter == 49 ? "%ld\n" : "%ld, ", n);
 		counter++;
 		n1 = n2;
 		n2 = n;
