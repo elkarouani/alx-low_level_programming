@@ -22,7 +22,7 @@ void times_table(void)
 				_putchar(' ');
 				_putchar(multiplicand * multiplier + 48);
 			}
-			if (mutliplicand != 0 && product >= 10)
+			if (multiplicand != 0 && product >= 10)
 			{
 				_putchar((product / 10) % 10 + 48);
 				_putchar(product % 10 + 48);
