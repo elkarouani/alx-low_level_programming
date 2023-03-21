@@ -20,6 +20,7 @@ void times_table(void)
 				_putchar('0');
 				_putchar(',');
 				_putchar(' ');
+				continue;
 			}
 			if (product < 10)
 			{
@@ -27,6 +28,7 @@ void times_table(void)
 				_putchar(multiplicand * multiplier + 48);
 				_putchar(',');
 				_putchar(' ');
+				continue;
 			}
 			if (product >= 10)
 			{
@@ -34,6 +36,7 @@ void times_table(void)
 				_putchar(product % 10 + 48);
 				_putchar(',');
 				_putchar(' ');
+				continue;
 			}
 		}
 		_putchar('\n');
