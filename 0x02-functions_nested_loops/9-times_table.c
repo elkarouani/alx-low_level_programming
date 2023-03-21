@@ -11,7 +11,7 @@ void times_table(void)
 
 	for (multiplier = 0; multiplier <= 9; multiplier++)
 	{
-		for (multiplicand = 0; multiplicand <= 9; multiplican++)
+		for (multiplicand = 0; multiplicand <= 9; multiplicand++)
 		{
 			int product = multiplicand * multiplier;
 
