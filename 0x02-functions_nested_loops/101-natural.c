@@ -16,7 +16,7 @@ int main(void)
 	{
 		if ((index % 3) == 0)
 			sumof3s = sumof3s + index;
-		if ((index % 5) == 0)
+		else if ((index % 5) == 0)
 			sumof5s = sumof5s + index;
 	}
 	total = sumof3s + sumof5s;
