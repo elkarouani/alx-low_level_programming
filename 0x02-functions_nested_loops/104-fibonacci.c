@@ -17,7 +17,7 @@ int main(void)
 
 	for (index = 1; index < 91; index++)
 	{
-		printf(", %lu", k);
+		printf(", %lu", n2);
 		n2 = n2 + n1;
 		n1 = n2 - n1;
 	}
