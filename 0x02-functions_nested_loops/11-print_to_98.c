@@ -14,19 +14,20 @@ void print_to_98(int n)
 	{
 		for (counter = n; counter <= 98; counter++)
 		{
-			printf("%d", counter);
-			if (counter < 98)
-				printf(", ");
+			if (counter == 98)
+				printf("%d\n", counter);
+			else
+				printf("%d, ", counter);
 		}
 	}
 	else
 	{
 		for (counter = n; counter >= 98; counter--)
 		{
-			printf("%d", counter);
-			if (counter > 98)
-				printf(", ");
+			if (counter == 98)
+				printf("%d\n", counter);
+			else
+				printf("%d, ", counter);
 		}
 	}
-	_putchar('\n');
 }
