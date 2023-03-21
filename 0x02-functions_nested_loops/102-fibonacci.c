@@ -13,10 +13,10 @@ int main(void)
 	int counter = 2;
 
 	printf("1, 2, ");
-	while (counter <= 50)
+	while (counter < 50)
 	{
 		n = n1 + n2;
-		printf(counter == 50 ? "%ld\n" : "%ld, ", n);
+		printf(counter < 49 ? "%ld\n" : "%ld, ", n);
 		counter++;
 		n1 = n2;
 		n2 = n;
