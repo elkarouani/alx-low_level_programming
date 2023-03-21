@@ -37,7 +37,7 @@ void times_table(void)
 			{
 				_putchar((product / 10) % 10 + 48);
 				_putchar(product % 10 + 48);
-				if (mutliplicand < 9)
+				if (multiplicand < 9)
 				{
 					_putchar(',');
 					_putchar(' ');
