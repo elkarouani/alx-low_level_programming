@@ -18,8 +18,8 @@ int main(void)
 		n = n1 + n2;
 		printf(counter == 50 ? "%ld\n" : "%ld, ", n);
 		counter++;
-		n0 = n1;
-		n1 = n;
+		n1 = n2;
+		n2 = n;
 	}
 
 	return (0);
