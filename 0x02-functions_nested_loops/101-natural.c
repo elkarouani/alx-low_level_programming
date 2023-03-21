@@ -8,7 +8,7 @@
 int main(void)
 {
 	unsigned long int sumof3s = 0;
-	unsigned long int sumof5s = 0; 
+	unsigned long int sumof5s = 0;
 	unsigned long int total = 0;
 	int index;
 
