@@ -11,6 +11,7 @@ int main(void)
 	long int a1 = 2;
 	int counter = 0;
 
+	printf("1, 2, ");
 	while (counter <= 50)
 	{
 		if (counter == 50)
