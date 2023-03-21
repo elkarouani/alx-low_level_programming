@@ -7,20 +7,19 @@
  */
 int main(void)
 {
-	long int a0 = 1;
-	long int a1 = 2;
-	int counter = 0;
+	long int n1 = 1;
+	long int n2 = 2;
+	long int n = n1 + n2;
+	int counter = 2;
 
 	printf("1, 2, ");
 	while (counter <= 50)
 	{
-		if (counter == 50)
-			printf("%ld\n", a0 + a1);
-		else
-			printf("%ld, ", a0 + a1);
+		n = n1 + n2;
+		printf(counter == 50 ? "%ld\n" : "%ld, ", n);
 		counter++;
 		a0 = a1;
-		a1 = a0 + a1;
+		a1 = n;
 	}
 
 	return (0);
