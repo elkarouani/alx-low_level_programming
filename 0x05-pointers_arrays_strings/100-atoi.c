@@ -18,7 +18,7 @@ int _atoi(char *s)
 			sign += -1;
 		if (s[len] == '+')
 			sign += +1;
-		if (s[len] > '0' && s[len] <= '9')
+		if (s[len] >= '0' && s[len] <= '9')
 		{
 			isNumberDetected = 1;
 			if (result > 0)
