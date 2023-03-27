@@ -10,7 +10,6 @@ int _atoi(char *s)
 	int len = 0;
 	int sign = 1;
 	int isNumberDetected = 0;
-	int isSignUsed = 0;
 	int result = 0;
 
 	while (s[len] != '\0')
