@@ -7,17 +7,18 @@
  */
 void rev_string(char *s)
 {
-	char *reversed = '';
+	char oppositeChar;
 	int i = 0;
-	int j = 0;
 	int len = 0;
+	int len1 = 0;
 
 	while (s[len] != '\0')
 		len++;
-	for (i = len - 1; i >= 0; i--)
+	len1 = len - 1;
+	for (i = 0; i <= len / 2 ; i++)
 	{
-		reversed[j] = s[i];
-		j++;
+		oppositeChar = s[i]
+		s[i] = s[len - 1];
+		s[len--] = tmp;
 	}
-	*s = *reversed;
 }
