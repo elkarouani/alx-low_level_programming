@@ -17,7 +17,7 @@ void rev_string(char *s)
 	len1 = len - 1;
 	for (i = 0; i <= len / 2 ; i++)
 	{
-		oppositeChar = s[i]
+		oppositeChar = s[i];
 		s[i] = s[len - 1];
 		s[len--] = tmp;
 	}
