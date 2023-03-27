@@ -7,7 +7,7 @@
  */
 void rev_string(char *s)
 {
-	char reversed[];
+	char *reversed;
 	int i = 0;
 	int j = 0;
 	int len = 0;
@@ -19,5 +19,5 @@ void rev_string(char *s)
 		reversed[j] = s[i];
 		j++;
 	}
-	*s = reversed;
+	*s = *reversed;
 }
