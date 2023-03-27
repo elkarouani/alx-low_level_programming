@@ -23,8 +23,8 @@ int _atoi(char *s)
 			isNumberDetected = 1;
 			if (result > 0)
 				result *= 10;
-			if (result == 2147483640)
-				result += (-2147483640 - (s[len] - 48));
+			if (result == 2147483640 && s[len] == '8')
+				result = -2147483648;
 			else
 				result += s[len] - 48;
 		}
@@ -33,5 +33,5 @@ int _atoi(char *s)
 		len++;
 	}
 
-	return (result == -2147483648 ? -2147483647 : sign * result);
+	return (result == -2147483648 ? result : sign * result);
 }
