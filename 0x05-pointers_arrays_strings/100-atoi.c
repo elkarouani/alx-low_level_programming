@@ -8,7 +8,7 @@
 int _atoi(char *s)
 {
 	int len = 0;
-	int sign = +1;
+	int sign = 0;
 	int isNumberDetected = 0;
 	int result = 0;
 
