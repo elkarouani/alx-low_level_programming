@@ -24,19 +24,15 @@ int _atoi(char *s)
 			isNumberDetected = 1;
 			if (result > 0)
 				result *= 10;
-
-			if (2147483647 - result >= s[len] - 48)
-			{
-				result *= sign;
-				isSignUsed = 1;
-			}
-			result += s[len] - 48;
+			if (result == 2147483640)
+				result += (-2147483640 - (s[len] - 48));
+			else
+				result += s[len] - 48;
 		}
 		if ((s[len] < '0' || s[len] > '9') && isNumberDetected == 1)
 			break;
-
 		len++;
 	}
 
-	return ((isSignUsed == 1 ? 1 : sign) * result);
+	return (result == -2147483648 ? -2147483647 : sign * result);
 }
