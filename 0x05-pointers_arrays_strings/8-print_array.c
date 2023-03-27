@@ -1,5 +1,5 @@
 #include "main.h"
-sh: 1: q: not found
+#include <stdio.h>
 
 /**
  * print_array - prints n elements of an array of integers
