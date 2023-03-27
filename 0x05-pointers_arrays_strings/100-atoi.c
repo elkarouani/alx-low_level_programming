@@ -8,16 +8,16 @@
 int _atoi(char *s)
 {
 	int len = 0;
-	int sign = 0;
+	int sign = 1;
 	int isNumberDetected = 0;
 	int result = 0;
 
 	while (s[len] != '\0')
 	{
 		if (s[len] == '-')
-			sign += -1;
+			sign *= -1;
 		if (s[len] == '+')
-			sign += +1;
+			sign *= +1;
 		if (s[len] >= '0' && s[len] <= '9')
 		{
 			isNumberDetected = 1;
@@ -31,5 +31,5 @@ int _atoi(char *s)
 		len++;
 	}
 
-	return ((sign < 0 ? -1 : 1) * result);
+	return (sign * result);
 }
