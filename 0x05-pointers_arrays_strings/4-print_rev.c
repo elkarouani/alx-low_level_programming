@@ -5,7 +5,7 @@
  * @s: the characters array to print
  * Return: Null
  */
-void rev_string(char *s)
+void print_rev(char *s)
 {
 	char tmp;
 	int i, len, len1;
