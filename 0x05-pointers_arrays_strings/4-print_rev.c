@@ -5,14 +5,25 @@
  * @s: the characters array to print
  * Return: Null
  */
-void print_rev(char *s)
+void rev_string(char *s)
 {
-	int i = 0;
-	int len = 0;
+	char tmp;
+	int i, len, len1;
 
-	while (s[i] != '\0')
+	len = 0;
+	len1 = 0;
+
+	while (s[len] != '\0')
+	{
 		len++;
-	for (i = len; i >= 0; i--)
-		_putchar(s[i]);
-	_putchar('\n');
+	}
+
+	len1 = len - 1;
+
+	for (i = 0; i < len / 2; i++)
+	{
+		tmp = s[i];
+		s[i] = s[len1];
+		s[len1--] = tmp;
+	}
 }
