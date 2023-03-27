@@ -25,7 +25,7 @@ int _atoi(char *s)
 			if (result > 0)
 				result *= 10;
 
-			if (INT_MAX - result >= s[len] - 48)
+			if (2147483647 - result >= s[len] - 48)
 			{
 				result *= sign;
 				isSignUsed = 1;
