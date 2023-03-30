@@ -9,7 +9,7 @@ char *cap_string(char *s)
 {
 	int index;
 	int len = 0;
-	int canBeConverted = 0;
+	int canBeConverted = 1;
 	char separators[13] = {' ', '\t', '\n', ',', ';', '.',
 		'!', '?', '"', '(', ')', '{', '}'};
 
