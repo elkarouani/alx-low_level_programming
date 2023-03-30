@@ -36,43 +36,41 @@ void rev_string(char *n)
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int n1len = 0;
-	int n2len = 0;
-	int val1, val2, tmptot;
-	int overflow = 1;
-	int digits = 1;
+	int overflow = 0, i = 0, j = 0, digits = 0;
+	int val1 = 0, val2 = 0, temp_tot = 0;
 
-	while (n1[n1len] != '\0')
-		n1len++;
-	while (n2[n2len] != '\0')
-		n2len++;
-
-	n1len--;
-	n2len--;
-
-	if (n1len >= size_r || n2len >= size_r)
+	while (*(n1 + i) != '\0')
+		i++;
+	while (*(n2 + j) != '\0')
+		j++;
+	i--;
+	j--;
+	if (j >= size_r || i >= size_r)
 		return (0);
-
-	while (n1len >= 0 || n2len >= 0 || overflow == 1)
+	while (j >= 0 || i >= 0 || overflow == 1)
 	{
-		val1 = n1len >= 0 ? *(n1 + n1len) - '0' : 0;
-		val2 = n2len >= 0 ? *(n2 + n2len) - '0' : 0;
-		tmptot = val1 + val2 + overflow;
-
-		overflow = (int)(tmptot >= 10);
-
-		if (digits >= size_r)
+		if (i < 0)
+			val1 = 0;
+		else
+			val1 = *(n1 + i) - '0';
+		if (j < 0)
+			val2 = 0;
+		else
+			val2 = *(n2 + j) - '0';
+		temp_tot = val1 + val2 + overflow;
+		if (temp_tot >= 10)
+			overflow = 1;
+		else
+			overflow = 0;
+		if (digits >= (size_r - 1))
 			return (0);
-
-		*(r + digits) = (tmptot % 10) + '0';
+		*(r + digits) = (temp_tot % 10) + '0';
 		digits++;
-		n1len--;
-		n2len--;
+		j--;
+		i--;
 	}
-
 	if (digits == size_r)
 		return (0);
-
 	*(r + digits) = '\0';
 	rev_string(r);
 	return (r);
