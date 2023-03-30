@@ -19,7 +19,6 @@ char *_strcat(char *dest, char *src)
 		destLength++;
 		srcLength++;
 	}
-	if (dest[destLength] != '\0')
-		dest[destLength] = '\0';
-	return *dest;
+	dest[destLength] = '\0';
+	return (dest);
 }
