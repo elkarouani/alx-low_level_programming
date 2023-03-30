@@ -7,23 +7,19 @@
  */
 void print_number(int n)
 {
-	int digitsCount = 0;
-	int nCopy = 0;
-	int index;
+	unsigned int n1;
 
-	nCopy = n;
 	if (n < 0)
 	{
+		n1 = -n;
 		_putchar('-');
-		nCopy = -nCopy;
-	}
-
-	while (nCopy != 0)
+	} else
 	{
-		nCopy /= 10;
-		digitsCount++;
+		n1 = n;
 	}
 
-	for (index = digitsCount; index > 0; index--)
-		_putchar(((n / (10 ** index)) % 10) + 48);
+	if (n1 / 10)
+		print_number(n1 / 10);
+
+	_putchar((n1 % 10) + '0');
 }
