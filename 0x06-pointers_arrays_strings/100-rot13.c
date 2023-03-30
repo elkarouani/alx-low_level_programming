@@ -17,7 +17,10 @@ char *rot13(char *s)
 		for (index = 0; index < 52; index++)
 		{
 			if (s[len] == code[index])
+			{
 				s[len] = encode[index];
+				break;
+			}
 		}
 		len++;
 	}
