@@ -19,6 +19,7 @@ char *cap_string(char *s)
 		{
 			s[len] = s[len] - 'a' + 'A';
 			canBeConverted = 0;
+			continue;
 		}
 		for (index = 0; index < 13; index++)
 		{
