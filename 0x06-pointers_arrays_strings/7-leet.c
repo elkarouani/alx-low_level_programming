@@ -7,21 +7,18 @@
  */
 char *leet(char *s)
 {
+	int index;
 	int len = 0;
+	char *code = "aAeEoOtTlL";
+	char *encode = "4433770011";
 
 	while (s[len] != '\0')
 	{
-
-		if (s[len] == 'a' || s[len] == 'A')
-			s[len] = 52;
-		if (s[len] == 'e' || s[len] == 'E')
-			s[len] = 51;
-		if (s[len] == 'o' || s[len] == 'O')
-			s[len] = 48;
-		if (s[len] == 't' || s[len] == 'T')
-			s[len] = 55;
-		if (s[len] == 'l' || s[len] == 'L')
-			s[len] = 49;
+		for (index = 0; index < 10; index++)
+		{
+			if (s[len] == code[index])
+				s[len] = encode[index];
+		}
 	}
 
 	return (s);
