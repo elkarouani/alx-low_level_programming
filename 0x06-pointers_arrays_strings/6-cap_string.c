@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * *cap_string - capitalizes all words of a string
@@ -16,8 +15,6 @@ char *cap_string(char *s)
 
 	while (s[len] != '\0')
 	{	
-		printf("\ncan %c be converted : %d\n", s[len], canBeConverted);
-
 		if (canBeConverted == 1 && s[len] >= 'a' && s[len] <= 'z')
 		{
 			s[len] = s[len] - 'a' + 'A';
