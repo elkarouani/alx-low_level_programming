@@ -16,12 +16,8 @@ char *cap_string(char *s)
 	while (s[len] != '\0')
 	{	
 		if (canBeConverted == 1 && s[len] >= 'a' && s[len] <= 'z')
-		{
 			s[len] = s[len] - 'a' + 'A';
-			canBeConverted = 0;
-		}
-		if (canBeConverted == 1 && s[len] >= 'A' && s[len] <= 'Z')
-			canBeConverted = 0;
+		canBeConverted = 0;
 		for (index = 0; index < 13; index++)
 		{
 			if (s[len] == separators[index])
