@@ -40,7 +40,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int n2len = 0;
 	int val1, val2, tmptot;
 	int overflow = 1;
-	int degits = 1;
+	int digits = 1;
 
 	while (n1[n1len] != '\0')
 		n1len++;
