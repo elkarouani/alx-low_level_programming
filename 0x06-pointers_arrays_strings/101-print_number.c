@@ -8,11 +8,15 @@
 void print_number(int n)
 {
 	int digitsCount = 0;
-	int nCopy = n;
+	int nCopy = 0;
 	int index;
 
+	nCopy = n;
 	if (n < 0)
+	{
 		_putchar('-');
+		nCopy = -nCopy;
+	}
 
 	while (nCopy != 0)
 	{
