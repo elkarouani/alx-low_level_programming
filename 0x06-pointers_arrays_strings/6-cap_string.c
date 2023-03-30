@@ -7,8 +7,11 @@
  */
 char *cap_string(char *s)
 {
+	int index;
 	int len = 0;
 	int canBeConverted = 0;
+	char separators[13] = {' ', '\t', '\n', ',', ';', '.',
+		'!', '?', '"', '(', ')', '{', '}'};
 
 	while (s[len] != '\0')
 	{
@@ -17,8 +20,11 @@ char *cap_string(char *s)
 			s[len] = s[len] - 'a' + 'A';
 			canBeConverted = 0;
 		}
-		if (s[len] == ' ')
-			canBeConverted = 1;
+		for (index = 0; index < 13; index++)
+		{
+			if (s[len] == separators[index])
+				canBeConverted = 1;
+		}
 		len++;
 	}
 
