@@ -19,6 +19,7 @@ char *leet(char *s)
 			if (s[len] == code[index])
 				s[len] = encode[index];
 		}
+		len++;
 	}
 
 	return (s);
