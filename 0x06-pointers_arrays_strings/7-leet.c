@@ -10,7 +10,7 @@ char *leet(char *s)
 	int index;
 	int len = 0;
 	char *code = "aAeEoOtTlL";
-	char *encode = "4433770011";
+	char *encode = "4433007711";
 
 	while (s[len] != '\0')
 	{
