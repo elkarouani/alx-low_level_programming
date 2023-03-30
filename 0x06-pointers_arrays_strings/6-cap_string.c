@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * *cap_string - capitalizes all words of a string
@@ -14,18 +15,22 @@ char *cap_string(char *s)
 		'!', '?', '"', '(', ')', '{', '}'};
 
 	while (s[len] != '\0')
-	{
+	{	
+		printf("\ncan %c be converted : %d\n", s[len], canBeConverted);
+
 		if (canBeConverted == 1 && s[len] >= 'a' && s[len] <= 'z')
 		{
 			s[len] = s[len] - 'a' + 'A';
 			canBeConverted = 0;
-			continue;
 		}
+		if (canBeConverted == 1 && s[len] >= 'A' && s[len] <= 'Z')
+			canBeConverted = 0;
 		for (index = 0; index < 13; index++)
 		{
 			if (s[len] == separators[index])
 				canBeConverted = 1;
 		}
+
 		len++;
 	}
 
