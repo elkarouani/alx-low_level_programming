@@ -55,8 +55,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	while (n1len >= 0 || n2len >= 0 || overflow == 1)
 	{
-		val1 = *(n1 + n1len) - '0';
-		val2 = *(n2 + n2len) - '0';
+		val1 = n1len >= 0 ? *(n1 + n1len) - '0' : 0;
+		val2 = n2len >= 0 ? *(n2 + n2len) - '0' : 0;
 		tmptot = val1 + val2 + overflow;
 
 		overflow = (int)(tmptot >= 10);
