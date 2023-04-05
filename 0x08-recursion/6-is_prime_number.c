@@ -17,7 +17,7 @@ int actual_prime(int n, int i)
 }
 
 /**
- * is_prime_numbert - returns 1 if the input integer is a prime number,
+ * is_prime_number - returns 1 if the input integer is a prime number,
  * otherwise return 0.
  * @n: the number to lookup
  * Return: 1 or 0
