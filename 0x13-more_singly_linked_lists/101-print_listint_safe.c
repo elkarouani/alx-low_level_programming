@@ -5,7 +5,7 @@
  * @head: pointer to the first element of the list
  * Return: count of elements in the list
  */
-size_t print_listint_safe(const listint *head)
+size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t *t_n = head;
 	const listint_t *last_node = head;
