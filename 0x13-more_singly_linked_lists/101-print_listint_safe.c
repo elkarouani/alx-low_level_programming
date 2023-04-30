@@ -17,7 +17,7 @@ size_t print_listint_safe(listint *head)
 		printf("[%p] %d\n", (void *)t_n, t_n->n);
 		count++;
 		t_n = t_n->next;
-		
+
 		while (new_value < count)
 		{
 			if (t_n == last_node)
