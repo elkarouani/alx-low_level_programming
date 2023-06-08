@@ -15,7 +15,7 @@ int wildcmp(char *s1, char *s2)
 	if (_strlen_recursion(s1) == 0)
 		return (1);
 	
-	return (wildcmp_base(s1, s2, _strlen_recursion(s1));	
+	return (wildcmp_base(s1, s2, _strlen_recursion(s1)));
 }
 
 /**
