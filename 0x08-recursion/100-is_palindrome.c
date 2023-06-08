@@ -43,5 +43,5 @@ int is_palindrome_base(char *s, int len, int i)
 	if (i >= len / 2)
 		return (1);
 
-	return (is_palindrome_base(s, len, i - 1));
+	return (is_palindrome_base(s, len, i + 1));
 }
