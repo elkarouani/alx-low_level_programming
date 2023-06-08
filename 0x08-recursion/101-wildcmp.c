@@ -44,7 +44,7 @@ int wildcmp_base(char *s1, char *s2, int len)
 	if (len < 0)
 		return (1);
 
-	if (*(s1 + len - 1) != (s2 + len - 1))
+	if (*(s1 + len - 1) != *(s2 + len - 1))
 		return (0);
 
 	return (wildcmp_base(s1, s2, len - 1));
