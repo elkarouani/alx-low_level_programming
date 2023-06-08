@@ -28,7 +28,7 @@ int _strlen_recursion(char *s)
 }
 
 /**
- * is_palindrome_base: base recursion logic
+ * is_palindrome_base - base recursion logic
  * @s: the string to lookup
  * @len: the length of the string
  * @i: the index target
