@@ -10,17 +10,24 @@
  */
 int main(int argc, char **argv)
 {
-	int i = 1;
+	int i, j;
 	int total = 0;
 
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (argv[i][j] > '9' || argv[i][j] < '0')
+			{
+				puts("Error");
+				return (1);
+			}
+		}
+	}
+
+	i = 1;
 	while (i <= argc - 1)
 	{
-		if (!_atoi(argv[i]))
-		{
-			printf("Error\n");
-			return (1);
-		}
-
 		if (_atoi(argv[i]) >= 0)
 			total += _atoi(argv[i++]);
 	}
