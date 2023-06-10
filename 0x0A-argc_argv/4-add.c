@@ -13,12 +13,6 @@ int main(int argc, char **argv)
 	int i = 1;
 	int total = 0;
 
-	if (argc - 1 == 0)
-	{
-		printf("0\n");
-		return (0);
-	}
-
 	while (i <= argc - 1)
 	{
 		if (!_atoi(argv[i]))
@@ -27,7 +21,8 @@ int main(int argc, char **argv)
 			return (1);
 		}
 
-		total += _atoi(argv[i++]);
+		if (_atoi(argv[i]) >= 0)
+			total += _atoi(argv[i++]);
 	}
 
 	printf("%d\n", total);
