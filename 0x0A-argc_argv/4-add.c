@@ -21,10 +21,10 @@ int main(int argc, char **argv)
 			return (1);
 		}
 
-		result += _atoi(argv[i]);
+		total += _atoi(argv[i]);
 	}
 
-	printf("%d\n", result);
+	printf("%d\n", total);
 	return (0);
 }
 
