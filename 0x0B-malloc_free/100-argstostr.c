@@ -17,12 +17,14 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 
 	new_string = *(av);
+	/*
 	while (i < ac)
 	{
 		new_string = str_concat(new_string, *(av + i++));
 		if (new_string == NULL)
 			return (NULL);
 	}
+	*/
 
 	return (new_string);
 }
