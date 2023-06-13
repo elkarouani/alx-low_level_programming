@@ -16,7 +16,7 @@ char *argstostr(int ac, char **av)
 	if (ac <= 0 || av == NULL)
 		return (NULL);
 
-	new_string = *av;
+	new_string = *(av);
 	while (i < ac)
 	{
 		new_string = str_concat(new_string, *(av + i++));
