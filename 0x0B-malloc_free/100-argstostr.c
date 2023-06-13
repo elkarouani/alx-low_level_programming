@@ -21,13 +21,6 @@ char *argstostr(int ac, char **av)
 		new_string = str_concat(new_string, *(av + i++));
 		if (new_string == NULL)
 			return (NULL);
-
-		if (i != ac - 1)
-		{
-			new_string = str_concat(new_string, '\n');
-			if (new_string == NULL)
-				return (NULL);
-		}
 	}
 
 	return (new_string);
