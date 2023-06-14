@@ -51,7 +51,7 @@ char **strtow(char *str)
 
 	for (i = 0; i <= len; i++)
 	{
-		if (str[i] == ' ' || str[i] == '\0')
+		if (*(str + i) == ' ' || *(str + i) == '\0')
 		{
 			if (c)
 			{
@@ -60,9 +60,9 @@ char **strtow(char *str)
 				if (current_word == NULL)
 					return (NULL);
 				while (start < end)
-					*current_word++ = str[start++];
+					*current_word++ = *(str + start++);
 				*current_word = '\0';
-				splited_words[k] = current_word - c;
+				*(splited_words + k) = current_word - c;
 				k++;
 				c = 0;
 			}
@@ -71,7 +71,6 @@ char **strtow(char *str)
 			start = i;
 	}
 
-	splited_words[k] = NULL;
-
+	*(splited_words + k) = NULL;
 	return (splited_words);
 }
