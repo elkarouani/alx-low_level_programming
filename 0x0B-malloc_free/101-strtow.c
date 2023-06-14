@@ -7,7 +7,7 @@
  *
  * Return: number of words
  */
-int count_word(char *s)
+int count_words(char *s)
 {
 	int capt_separator = 0;
 	int words_count = 0;
@@ -28,7 +28,7 @@ int count_word(char *s)
 }
 
 /**
- * strtow - splits a string into words
+ * **strtow - splits a string into words
  * @str: string to split
  *
  * Return: pointer to an array of strings (Success)
@@ -36,16 +36,13 @@ int count_word(char *s)
  */
 char **strtow(char *str)
 {
-	char **splited_words;
-	char *tmp;
-	int len = 0;
-	int words_count = 0;
-	int i, k = 0, c = 0, start, end;
+	char **splited_words, *tmp;
+	int i, k = 0, len = 0, words_count, c = 0, start, end;
 
 	while (*(str + len))
 		len++;
 
-	words_count = count_word(str);
+	words_count = count_words(str);
 	if (words_count == 0)
 		return (NULL);
 
@@ -60,14 +57,11 @@ char **strtow(char *str)
 			if (c)
 			{
 				end = i;
-				
 				tmp = (char *) malloc(sizeof(char) * (c + 1));
 				if (tmp == NULL)
 					return (NULL);
-				
 				while (start < end)
 					*tmp++ = *(str + start++);
-				
 				*tmp = '\0';
 				*(splited_words + k) = tmp - c;
 				k++;
