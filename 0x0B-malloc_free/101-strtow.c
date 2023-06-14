@@ -2,66 +2,76 @@
 #include "main.h"
 
 /**
- * strtow - splits a string into words.
- * @str: the string to be splited
+ * count_word - helper function to count the number of words in a string
+ * @s: string to evaluate
  *
- * Return: pointer of splitted words array, or NULL if it fails
+ * Return: number of words
+ */
+int count_word(char *s)
+{
+	int flag, c, w;
+
+	flag = 0;
+	w = 0;
+
+	for (c = 0; s[c] != '\0'; c++)
+	{
+		if (s[c] == ' ')
+			flag = 0;
+		else if (flag == 0)
+		{
+			flag = 1;
+			w++;
+		}
+	}
+
+	return (w);
+}
+/**
+ * **strtow - splits a string into words
+ * @str: string to split
+ *
+ * Return: pointer to an array of strings (Success)
+ * or NULL (Error)
  */
 char **strtow(char *str)
 {
-	char **splited_words;
-	char *current_word;
-	char delimiter = ' ';
-	int detect_delimiter = 0;
-	int words_count = 0;
-	int len = 0;
-	int i = 0;
-	int j = 0;
-	int k = 0;
+	char **matrix, *tmp;
+	int i, k = 0, len = 0, words, c = 0, start, end;
 
-	if (str == NULL)
+	while (*(str + len))
+		len++;
+	words = count_word(str);
+	if (words == 0)
 		return (NULL);
 
-	while (*(str + len) != '\0')
+	matrix = (char **) malloc(sizeof(char *) * (words + 1));
+	if (matrix == NULL)
+		return (NULL);
+
+	for (i = 0; i <= len; i++)
 	{
-		if (*(str + len++) == delimiter)
-			detect_delimiter = 1;
-		else if (detect_delimiter == 1)
+		if (str[i] == ' ' || str[i] == '\0')
 		{
-			detect_delimiter = 0;
-			words_count++;
+			if (c)
+			{
+				end = i;
+				tmp = (char *) malloc(sizeof(char) * (c + 1));
+				if (tmp == NULL)
+					return (NULL);
+				while (start < end)
+					*tmp++ = str[start++];
+				*tmp = '\0';
+				matrix[k] = tmp - c;
+				k++;
+				c = 0;
+			}
 		}
-	}
-	if (words_count == 0)
-		return (NULL);
-
-	splited_words = (char **) malloc(sizeof(char *) * (words_count + 1));
-	if (splited_words == NULL)
-		return (NULL);
-
-	while (i < words_count)
-	{
-		while (j < len)
-		{
-			if (*(str + j) != delimiter)
-				*(current_word + k++) = *(str + j++);
-			else
-				break;
-		}
-		if (k == 0)
-			continue;
-		
-		*(splited_words + i) = (char *) malloc(sizeof(char) * k + 1);
-		if (*(splited_words + i) == NULL)
-			return (NULL);
-			
-		*(current_word + k++) = '\0';
-		*(splited_words + i++) = current_word;
-
-		k = 0;
-		current_word = NULL;
+		else if (c++ == 0)
+			start = i;
 	}
 
-	*(splited_words + words_count + 1) = NULL;
-	return (splited_words);
+	matrix[k] = NULL;
+
+	return (matrix);
 }
