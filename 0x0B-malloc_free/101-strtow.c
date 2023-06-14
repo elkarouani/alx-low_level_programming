@@ -2,30 +2,29 @@
 #include "main.h"
 
 /**
- * count_word - helper function to count the number of words in a string
+ * count_words - helper function to count the number of words in a string
  * @s: string to evaluate
  *
  * Return: number of words
  */
-int count_word(char *s)
+int count_words(char *s)
 {
-	int flag, c, w;
+	int detect_delimiter = 0;
+	int words_count = 0;
+	int i = 0;
 
-	flag = 0;
-	w = 0;
-
-	for (c = 0; s[c] != '\0'; c++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[c] == ' ')
-			flag = 0;
-		else if (flag == 0)
+		if (s[i] == ' ')
+			detect_delimiter = 0;
+		else if (detect_delimiter == 0)
 		{
-			flag = 1;
-			w++;
+			detect_delimiter = 1;
+			words_count++;
 		}
 	}
 
-	return (w);
+	return (words_count);
 }
 /**
  * **strtow - splits a string into words
@@ -41,7 +40,7 @@ char **strtow(char *str)
 
 	while (*(str + len))
 		len++;
-	words = count_word(str);
+	words = count_words(str);
 	if (words == 0)
 		return (NULL);
 
