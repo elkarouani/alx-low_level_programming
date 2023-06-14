@@ -40,11 +40,12 @@ char *argstostr(int ac, char **av)
 	while (i < ac)
 	{
 		while (*(*(av + i) + j) != '\0')
-			*(new_string + k++) = *(*(av + i) + j++);
-		if (i < ac - 1)
-			*(new_string + k) = '\n';
+			*(new_string + k++) = *(*(av + i++) + j++);
+
+		*(new_string + k++) = '\n';
 		j = 0;
 	}
 
+	*(new_string + k) = '\0';
 	return (new_string);
 }
