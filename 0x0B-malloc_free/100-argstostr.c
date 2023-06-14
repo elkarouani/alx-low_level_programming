@@ -32,7 +32,7 @@ char *argstostr(int ac, char **av)
 		j = 0;
 	}
 
-	new_string = (char *) malloc(sizeof(char) * total_length);
+	new_string = (char *) malloc(sizeof(char) * total_length + 1);
 	if (new_string == NULL)
 		return (NULL);
 
