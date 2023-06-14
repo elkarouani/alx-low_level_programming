@@ -13,9 +13,9 @@ int count_words(char *s)
 	int words_count = 0;
 	int i = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (*(s + i) != '\0')
 	{
-		if (s[i] == ' ')
+		if (*(s + i++) == ' ')
 			detect_delimiter = 0;
 		else if (detect_delimiter == 0)
 		{
