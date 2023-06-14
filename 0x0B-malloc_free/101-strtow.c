@@ -36,8 +36,8 @@ int count_words(char *s)
  */
 char **strtow(char *str)
 {
-	char **splited_words, *tmp;
-	int i, k = 0, len = 0, words_count, c = 0, start, end;
+	char **splited_words;
+	int k = 0, len = 0, words_count;
 
 	while (*(str + len))
 		len++;
