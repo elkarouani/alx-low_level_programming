@@ -16,10 +16,10 @@ int count_words(char *s)
 	while (*(s + i) != '\0')
 	{
 		if (*(s + i) == ' ')
-			capt_separator = 1;
-		else if (capt_separator == 1)
-		{
 			capt_separator = 0;
+		else if (capt_separator == 0)
+		{
+			capt_separator = 1;
 			words_count++;
 		}
 	}
