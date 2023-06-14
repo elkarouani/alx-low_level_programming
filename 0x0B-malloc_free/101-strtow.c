@@ -2,10 +2,10 @@
 #include "main.h"
 
 /**
- * count_words - helper function to count the number of words in a string
- * @s: string to evaluate
+ * count_words - counts possible space splited words
+ * @s: string to lookup
  *
- * Return: number of words
+ * Return: number of possible words
  */
 int count_words(char *s)
 {
@@ -26,6 +26,7 @@ int count_words(char *s)
 
 	return (words_count);
 }
+
 /**
  * **strtow - splits a string into words
  * @str: string to split
@@ -35,17 +36,17 @@ int count_words(char *s)
  */
 char **strtow(char *str)
 {
-	char **matrix, *tmp;
-	int i, k = 0, len = 0, words, c = 0, start, end;
+	char **splited_words, *current_word;
+	int i, k = 0, len = 0, words_count, c = 0, start, end;
 
 	while (*(str + len))
 		len++;
-	words = count_words(str);
-	if (words == 0)
+	words_count = count_words(str);
+	if (words_count == 0)
 		return (NULL);
 
-	matrix = (char **) malloc(sizeof(char *) * (words + 1));
-	if (matrix == NULL)
+	splited_words = (char **) malloc(sizeof(char *) * (words_count + 1));
+	if (splited_words == NULL)
 		return (NULL);
 
 	for (i = 0; i <= len; i++)
@@ -55,13 +56,13 @@ char **strtow(char *str)
 			if (c)
 			{
 				end = i;
-				tmp = (char *) malloc(sizeof(char) * (c + 1));
-				if (tmp == NULL)
+				current_word = (char *) malloc(sizeof(char) * (c + 1));
+				if (current_word == NULL)
 					return (NULL);
 				while (start < end)
-					*tmp++ = str[start++];
-				*tmp = '\0';
-				matrix[k] = tmp - c;
+					*current_word++ = str[start++];
+				*current_word = '\0';
+				splited_words[k] = current_word - c;
 				k++;
 				c = 0;
 			}
@@ -70,7 +71,7 @@ char **strtow(char *str)
 			start = i;
 	}
 
-	matrix[k] = NULL;
+	splited_words[k] = NULL;
 
-	return (matrix);
+	return (splited_words);
 }
