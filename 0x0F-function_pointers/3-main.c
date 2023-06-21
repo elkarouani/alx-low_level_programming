@@ -22,9 +22,9 @@ int main(int argc, char **argv)
 	first_number = atoi(*(argv + 1));
 	second_number = atoi(*(argv + 3));
 	operator = *(argv + 2);
-	
+
 	operation = get_op_func(operator);
-	if(!operation)
+	if (!operation)
 	{
 		printf("Error\n");
 		exit(98);
