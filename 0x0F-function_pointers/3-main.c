@@ -1,4 +1,4 @@
-#include "calc.h"
+#include "3-calc.h"
 
 /**
  * main - program that perfroms simple operations
@@ -9,7 +9,7 @@
  */
 int main(int argc, char **argv)
 {
-	char operator;
+	char *operator;
 	int first_number, second_number;
 	int (*operation)(int, int);
 
@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	if ((operator == '/' || operator == '%') && second_number == 0)
+	if ((*operator == '/' || *operator == '%') && second_number == 0)
 	{
 		printf("Error\n");
 		exit(100);

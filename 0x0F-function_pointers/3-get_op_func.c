@@ -1,4 +1,4 @@
-#include "calc.h"
+#include "3-calc.h"
 
 /**
  * get_op_func - selects the correct function to
@@ -11,19 +11,19 @@
 int (*get_op_func(char *s))(int, int)
 {
 	op_t operations[] = {
-		{"+", opp_add},
-		{"-", opp_sub},
-		{"*", opp_mul},
-		{"/", opp_div},
-		{"%", opp_mod},
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
 		{NULL, NULL}
 	};
 	int i;
 
-	for (i = 0; *(opearation + i).op, i++)
+	for (i = 0; operations[i].op; i++)
 	{
-		if (strcmp(*(operations + i).op, s) == 0)
-			return (*(operations + i).f);
+		if (strcmp(operations[i].op, s) == 0)
+			return (operations[i].f);
 	}
 
 	return (NULL);
