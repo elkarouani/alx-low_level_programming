@@ -10,10 +10,10 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	char *current_string, *separator = "";
 
+	va_start(argv, format);
+
 	if (!format)
 		return;
-
-	va_start(argv, format);
 
 	while (*(format + i))
 	{
