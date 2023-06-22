@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 	if (!operation)
 	{
 		printf("Error\n");
-		exit(98);
+		exit(99);
 	}
 
 	if ((*operator == '/' || *operator == '%') && second_number == 0)
