@@ -18,12 +18,13 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
+	int i = 0;
 
-	for (i = 0; operations[i].op; i++)
+	while (operations[i].op)
 	{
 		if (strcmp(operations[i].op, s) == 0)
 			return (operations[i].f);
+		i++;
 	}
 
 	return (NULL);
