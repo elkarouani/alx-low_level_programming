@@ -24,7 +24,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		digit = (unsigned int)(*(b + i)) - '0';
 
-		if (digit != 0 || digit != 1)
+		if (digit != 0 && digit != 1)
 			return (0);
 
 		result += digit * base2_counter;
