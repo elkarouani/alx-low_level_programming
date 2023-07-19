@@ -15,7 +15,7 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	for (n_temp = 0, shifts = 0; (n_temp >>= 1) > 0; shifts++);
+	for (n_temp = n, shifts = 0; (n_temp >>= 1) > 0; shifts++);
 
 	for (; shifts >= 0; shifts--)
 		_putchar(((n >> shifts) & 1) ? '1' : '0');
