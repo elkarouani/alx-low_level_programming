@@ -71,7 +71,7 @@ int main(int argc, char **argv)
 		w_bits = write(to_desc, buffer, r_bits);
 		if (to_desc == -1 || w_bits == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", *(argv + 2));
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", *(argv + 2));
 			exit(99);
 		}
 
